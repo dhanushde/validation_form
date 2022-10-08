@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate form</title>
+</head>
+<body>
+    <h1>Welcome to the Form Validation Form</h1>
+    <form action="resume.html" name="myForm" onsubmit="return validateForm()" method="post" target="_blank">
+        Name: <input type="text" name="fName"><br>
+        Email: <input type="email" name="femail" style="margin-top:10px"><br>
+        Password: <input type="password" name="fpass" style="margin-top:10px"><br>
+        Phone: <input type="phone" name="fphone" style="margin-top:10px"><br>
+        Address: <input type="text" name="faddress" style="margin-top:10px"><br>
+        <input type="submit" value="submit">
+    </form>
+
+    <script>
+        function validateForm() {
+        var name = document.forms["myForm"]["fName"].value;
+        if (name == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+
+    var email = document.forms["myForm"]["femail"].value;
+    if(email == ""){
+        alert("Email must be filled out");
+        return false;
+    }
+
+    var password = document.forms["myForm"]["fpass"].value;
+    if(password == "" ){
+        alert("Password must be filled out");
+        return false;
+    }
+
+    var phone = document.forms["myForm"]["fphone"].value;
+    if(phone.length < 10){
+        alert("This Phone Number very short");
+        return false;
+    }
+    var address = document.forms["myForm"]["faddress"].value;
+    if(address == ""){
+        alert("Address must be filled out");
+        return false;
+    }
+    
+}
+
+    </script>
+</body>
+</html>
